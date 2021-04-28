@@ -143,6 +143,12 @@ declare module "react-native-image-crop-picker" {
          * @default false
          */
          useStockGallery?: boolean;
+        /**
+         * Max number of files to select when using `multiple` option.
+         * @platform Android only
+         * @default false
+         */
+         showPreview?: boolean;
     }
 
     type ImageOptions = CommonOptions & {

@@ -78,6 +78,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     private boolean multiple = false;
     private int maxFiles = 5;
     private boolean useStockGallery = false;
+    private boolean showPreview = false;
     private boolean includeBase64 = false;
     private boolean includeExif = false;
     private boolean cropping = false;
@@ -128,6 +129,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         mediaType = options.hasKey("mediaType") ? options.getString("mediaType") : "any";
         multiple = options.hasKey("multiple") && options.getBoolean("multiple");
         useStockGallery = options.hasKey("useStockGallery") && options.getBoolean("useStockGallery");
+        showPreview = options.hasKey("showPreview") && options.getBoolean("showPreview");
         maxFiles = options.hasKey("maxFiles") ? options.getInt("maxFiles") : maxFiles;
         includeBase64 = options.hasKey("includeBase64") && options.getBoolean("includeBase64");
         includeExif = options.hasKey("includeExif") && options.getBoolean("includeExif");
@@ -401,6 +403,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
                 .thumbnailScale(0.85f)
                 .imageEngine(new GlideEngine())
+                .showPreview(showPreview)
                 .forResult(IMAGE_PICKER_REQUEST);
     }
 
