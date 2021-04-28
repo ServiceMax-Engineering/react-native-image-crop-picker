@@ -138,13 +138,13 @@ declare module "react-native-image-crop-picker" {
         writeTempFile?: boolean;
         
         /**
-         * Max number of files to select when using `multiple` option.
+         * When set to true, android stock gallery will be used to pick media
          * @platform Android only
          * @default false
          */
          useStockGallery?: boolean;
         /**
-         * Max number of files to select when using `multiple` option.
+         * When set to true, preview screen is opened when pressing an image
          * @platform Android only
          * @default false
          */
