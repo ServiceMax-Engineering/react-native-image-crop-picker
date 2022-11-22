@@ -312,8 +312,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
 
         setConfiguration(options);
         resultCollector.setup(promise, false);
-
-        permissionsCheck(activity, promise, Arrays.asList(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE), new Callable<Void>() {
+        //WRITE_EXTERNAL_STORAGE permission is not needed for using getExternalFilesDir
+        permissionsCheck(activity, promise, Arrays.asList(Manifest.permission.CAMERA), new Callable<Void>() {
             @Override
             public Void call() {
                 initiateCamera(activity);
